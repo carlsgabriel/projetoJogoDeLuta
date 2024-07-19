@@ -53,15 +53,17 @@ class Stage {
     start() {
         this.update();
 
-        this.p1El.querySelector('.attackButton').addEventListener('click', () => {
-            this.doAttack(this.p1, this.p2);
+        document.querySelector('.attackButton').addEventListener('click', () => {
+            let attacker = Math.random() < 0.5 ? this.p1 : this.p2;
+            let defenser = attacker === this.p1 ? this.p2 : this.p1;
+
+            this.doAttack(attacker, defenser)
         })
-        this.p2El.querySelector('.attackButton').addEventListener('click', () => {
-            this.doAttack(this.p2, this.p1);
-        })
+
     }
 
     update() {
+
         this.p1El.querySelector('.name').innerHTML = `${this.p1.name} - ${this.p1.life.toFixed(1)}HP`;
         let hpPercent = (this.p1.life / this.p1.maxLife) * 100;
         this.p1El.querySelector('.lifeBar-bar').style.width = `${hpPercent}%`;
@@ -70,6 +72,27 @@ class Stage {
         this.p2El.querySelector('.name').innerHTML = `${this.p2.name} - ${this.p2.life.toFixed(1)}HP`;
         let hpPercent2 = (this.p2.life / this.p2.maxLife) * 100;
         this.p2El.querySelector('.lifeBar-bar').style.width = `${hpPercent2}%`;
+
+        document.querySelector('.first').innerHTML = `${this.p1.name}`;
+        document.querySelector('.first').style.color = 'red';
+        document.querySelector('.second').innerHTML = `${this.p2.name}`;
+        document.querySelector('.second').style.color = 'blue';
+
+        if (this.p1.life == 0) {
+            document.querySelector('.battleCamp').style.display = 'none';
+            document.querySelector('.log').style.display = 'none';
+            document.querySelector('.winner').style.display = 'flex';
+            document.querySelector('.img').setAttribute('src', 'assets/imgs/pitbull.jpg');
+            document.querySelector('.winner img').style.border = '5px solid blue';
+            document.querySelector('.winner h1').innerHTML = `${this.p2.name} foi o vencedor!`;
+        } else if (this.p2.life == 0) {
+            document.querySelector('.battleCamp').style.display = 'none';
+            document.querySelector('.log').style.display = 'none';
+            document.querySelector('.winner').style.display = 'flex';
+            document.querySelector('.img').setAttribute('src', 'assets/imgs/pinscher.jpg');
+            document.querySelector('.winner img').style.border = '5px solid red';
+            document.querySelector('.winner h1').innerHTML = `${this.p1.name} foi o vencedor!`;
+        }
     }
 
     doAttack(ata, def) {

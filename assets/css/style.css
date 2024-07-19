@@ -6,16 +6,54 @@
 
 body {
     height: 100vh;
-    background-image: url('asd.avif');
+    background-image: url('../imgs/asd.avif');
     background-repeat: no-repeat;
     background-size: cover;
     display: flex;
     flex-direction: column;
+    align-items: center;
+}
+
+.tittle {
+    margin-top: 50px;
+    text-transform: uppercase;
+    text-align: center;
+    color: white;
+
+}
+
+.oponents {
+    display: flex;
     justify-content: center;
     align-items: center;
 }
 
+.oponents p {
+    color: white;
+    text-transform: uppercase;
+    font-size: 25px;
+    font-weight: 700;
+    margin-top: 15px;
+}
+
+.first,
+.second {
+    text-transform: uppercase;
+    font-size: 25px;
+    font-weight: 700;
+    margin-top: 15px;
+}
+
+.first {
+    margin-right: 10px;
+}
+
+.second {
+    margin-left: 10px;
+}
+
 .battleCamp {
+    margin-top: 50px;
     width: 700px;
     height: 300px;
     background-color: rgba(255, 255, 255, 0.8);
@@ -23,6 +61,7 @@ body {
     display: flex;
     gap: 50px;
     position: relative;
+    border-radius: 20px;
 }
 
 #character1,
@@ -32,7 +71,7 @@ body {
     flex: 1;
 }
 
-#character2::before{
+#character2::before {
     font-size: 30px;
     content: 'X';
     position: absolute;
@@ -62,11 +101,11 @@ body {
     border-radius: 5px;
 }
 
-.profile.um{
+.profile.um {
     background-color: #8b0000;
 }
 
-.profile.dois{
+.profile.dois {
     background-color: #0000CD;
 }
 
@@ -102,23 +141,57 @@ body {
     border: 3px solid #333;
     align-self: center;
     cursor: pointer;
+    position: absolute;
+    top: 230px;
+    left: 300px;
 }
 
-.attackButton:hover{
+.attackButton:hover {
     background-color: #666;
 }
 
-.log{
+.log {
     padding: 10px;
     width: 700px;
     height: 300px;
     background-color: rgba(255, 255, 255, 0.8);
     margin-top: 20px;
-    border: 5px solid #DAA520;  
     overflow-y: scroll;
     font-size: 20px;
+    border-radius: 3px;
 }
 
-ul, li{
+ul,
+li {
     list-style: none;
+}
+
+.winner {
+    width: 700px;
+    height: 600px;
+    background-color: rgba(255, 255, 255, 0.8);
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+    margin-top: 20px;
+}
+
+.winner-img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 600px;
+    height: 500px;
+}
+
+.winner img {
+    max-width: 100%;
+    max-height: 100%;
+    border-radius: 50%;
+}
+
+.winner h1 {
+    margin-top: 10px;
+    text-transform: uppercase;
 }

@@ -1,9 +1,9 @@
 let log = new Log(document.querySelector('.log'));
-let jogador1 = new Player1('Satanas do mal');
-let jogador2 = new Player2('Fofinho');
+let jogador1 = new Player1('TIÃO');
+let jogador2 = new Player2('TOTÓ');
 
 const stage = new Stage(
-    jogador1, 
+    jogador1,
     jogador2,
     document.querySelector('#character1'),
     document.querySelector('#character2'),
