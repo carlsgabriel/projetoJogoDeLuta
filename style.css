@@ -1,0 +1,124 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    background-image: url('asd.avif');
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.battleCamp {
+    width: 700px;
+    height: 300px;
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 30px;
+    display: flex;
+    gap: 50px;
+    position: relative;
+}
+
+#character1,
+#character2 {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+#character2::before{
+    font-size: 30px;
+    content: 'X';
+    position: absolute;
+    top: 135px;
+    left: 338px;
+    font-weight: 700;
+}
+
+.lifeBar {
+    height: 20px;
+    border: 3px solid #000;
+    border-radius: 3px;
+}
+
+.lifeBar-bar {
+    height: 15px;
+    background-color: #F00;
+    border-radius: 0px;
+}
+
+.profile {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-top: 20px;
+    border-radius: 5px;
+}
+
+.profile.um{
+    background-color: #8b0000;
+}
+
+.profile.dois{
+    background-color: #0000CD;
+}
+
+.icon {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-top: 15px;
+}
+
+.icon img {
+    max-width: 100%;
+    border-radius: 50%;
+}
+
+.name {
+    text-align: center;
+    margin-top: 15px;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: #DAA520;
+}
+
+.attackButton {
+    margin-top: 30px;
+    width: 100px;
+    border-radius: 10px;
+    display: inline-flex;
+    justify-content: center;
+    text-transform: uppercase;
+    font-weight: 700;
+    border: 3px solid #333;
+    align-self: center;
+    cursor: pointer;
+}
+
+.attackButton:hover{
+    background-color: #666;
+}
+
+.log{
+    padding: 10px;
+    width: 700px;
+    height: 300px;
+    background-color: rgba(255, 255, 255, 0.8);
+    margin-top: 20px;
+    border: 5px solid #DAA520;  
+    overflow-y: scroll;
+    font-size: 20px;
+}
+
+ul, li{
+    list-style: none;
+}
